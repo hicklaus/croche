@@ -22,6 +22,7 @@ import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -282,6 +283,10 @@ public class MergeMojo extends AbstractMojo {
 						targetList.add(file);
 					}
 				}
+			}
+			
+			for (List<File> subList : this.orderedFiles.values()){
+			    Collections.sort(subList);
 			}
 		}
 
