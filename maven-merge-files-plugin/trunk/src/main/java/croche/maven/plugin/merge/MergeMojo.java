@@ -96,6 +96,9 @@ public class MergeMojo extends AbstractMojo {
 			if (merge.getTargetFile().exists()) {
 				merge.getTargetFile().delete();
 			}
+			
+			//create parent directory
+			new File(merge.getTargetFile().getParent()).mkdirs();
 
 			// build ordering names
 			buildOrderings(merge);
